@@ -82,6 +82,16 @@ module('Acceptance | search', function(hooks) {
     assert.dom('[data-test-search-input]').isFocused();
   });
 
+  test('check search results count per page is 10 by default', async function(assert) {
+    this.server.loadFixtures();
+
+    await visit('/');
+    await fillIn('[data-test-search-input]', 'rust');
+    await triggerEvent('[data-test-search-form]', 'submit');
+
+    assert.dom('[data-test-search-sort] [data-test-search-per-page]').hasText('10');
+  });
+
   test('check search results are by default displayed by relevance', async function(assert) {
     this.server.loadFixtures();
 

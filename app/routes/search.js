@@ -4,6 +4,7 @@ export default Route.extend({
   queryParams: {
     q: { refreshModel: true },
     page: { refreshModel: true },
+    per_page: { refreshModel: true },
     sort: { refreshModel: true },
   },
 

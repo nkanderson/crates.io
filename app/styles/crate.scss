@@ -103,6 +103,11 @@
         display: inline-block;
         @include border-radius(5px);
     }
+
+    .per-page {
+        margin-left: auto;
+        margin-right: 20px;
+    }
 }
 
 .white-rows {
